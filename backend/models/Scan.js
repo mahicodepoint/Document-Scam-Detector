@@ -1,0 +1,1 @@
+const mongoose = require("mongoose"); const scanSchema = new mongoose.Schema({ text: { type: String, required: true }, prediction: String, confidence: Number, message: String }, { timestamps: true }); module.exports = mongoose.model("Scan", scanSchema);
