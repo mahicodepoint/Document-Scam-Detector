@@ -1,0 +1,123 @@
+﻿.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+  background: linear-gradient(135deg, #eef8f3, #f5f8f7);
+  font-family: inherit;
+}
+.auth-card {
+  width: 100%;
+  max-width: 440px;
+  padding: 36px;
+  background: white;
+  border: 1px solid #e2eee8;
+  border-radius: 20px;
+  box-shadow: 0 15px 45px rgba(8, 50, 35, .09);
+}
+.auth-logo {
+  width: 58px;
+  height: 58px;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 18px;
+  border-radius: 16px;
+  color: white;
+  background: #079866;
+}
+.auth-card h1 {
+  margin: 0;
+  text-align: center;
+  color: #102a20;
+  font-size: 25px;
+}
+.auth-subtitle {
+  margin: 9px 0 25px;
+  text-align: center;
+  color: #718078;
+  font-size: 13px;
+}
+.auth-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.auth-card label {
+  margin-top: 5px;
+  color: #263d32;
+  font-size: 13px;
+  font-weight: 600;
+}
+.auth-card input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 13px 14px;
+  border: 1px solid #dce8e1;
+  border-radius: 9px;
+  outline: none;
+  background: #fbfdfc;
+  color: #172c22;
+  font-size: 14px;
+}
+.auth-card input:focus {
+  border-color: #10b981;
+  box-shadow: 0 0 0 3px rgba(16,185,129,.10);
+}
+.password-field {
+  position: relative;
+}
+.password-field input {
+  padding-right: 45px;
+}
+.password-field button {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 0;
+  background: transparent;
+  color: #64776d;
+  cursor: pointer;
+}
+.auth-submit {
+  margin-top: 14px;
+  padding: 14px;
+  border: 0;
+  border-radius: 9px;
+  background: #079866;
+  color: white;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.auth-submit:hover {
+  background: #078d61;
+}
+.auth-submit:disabled {
+  opacity: .65;
+  cursor: not-allowed;
+}
+.auth-error {
+  padding: 10px;
+  border-radius: 8px;
+  background: #fff0f0;
+  color: #c62828;
+  font-size: 13px;
+}
+.auth-switch {
+  margin: 22px 0 0;
+  text-align: center;
+  color: #64776d;
+  font-size: 13px;
+}
+.auth-switch button {
+  border: 0;
+  background: transparent;
+  color: #078d61;
+  font-weight: 700;
+  cursor: pointer;
+}
+@media(max-width: 480px) {
+  .auth-card { padding: 25px 20px; }
+}

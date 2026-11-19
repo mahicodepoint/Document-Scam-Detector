@@ -1,0 +1,81 @@
+﻿text,label,scam_type,channel,example_origin
+Congratulations! You are selected for a remote data entry job. Pay a refundable registration fee today to receive your joining letter.,scam,Job / Recruitment Fee Scam,Email,synthetic_training_example
+Your appointment letter is approved. Transfer the security deposit to the recruiter’s personal UPI ID before 5 PM or the offer will be cancelled.,scam,Fake Offer Letter,Email,synthetic_training_example
+Earn daily income by liking videos. Complete a small task and deposit money to unlock the next high-paying task.,scam,Work From Home Task Scam,WhatsApp,synthetic_training_example
+Your payment is pending. Approve this UPI collect request and enter your UPI PIN to receive the refund.,scam,UPI Collect Request Scam,SMS,synthetic_training_example
+Scan this QR code to receive your prize money. Enter your UPI PIN after scanning to credit the amount.,scam,QR Code Payment Scam,WhatsApp,synthetic_training_example
+Your bank account will be blocked today. Update KYC immediately using this link and submit your card details.,scam,KYC Update Phishing,SMS,synthetic_training_example
+Your account verification is incomplete. Share the OTP you just received with our support executive to prevent suspension.,scam,OTP Theft,SMS,synthetic_training_example
+"This is your bank security department. Your debit card is compromised. Tell me your card number, CVV and OTP to block the transaction.",scam,Bank Impersonation,Phone,synthetic_training_example
+This is a cyber crime officer. Your identity is linked to an illegal parcel. Stay on video call and transfer money to a verification account.,scam,Digital Arrest / Law Enforcement Impersonation,Phone,synthetic_training_example
+Your parcel is held by customs due to an incomplete address. Pay a small redelivery fee through this link immediately.,scam,Fake Courier / Parcel Scam,SMS,synthetic_training_example
+Invest 5000 today and receive guaranteed 50000 in seven days. Limited slots. Send funds to this personal account.,scam,Investment / Guaranteed Return Scam,WhatsApp,synthetic_training_example
+Our private trading platform guarantees 8 percent daily profit. Deposit cryptocurrency now to activate your account.,scam,Fake Trading App,Website,synthetic_training_example
+We can recover your lost cryptocurrency. Pay an advance recovery and verification fee and share your wallet seed phrase.,scam,Crypto Recovery Scam,Email,synthetic_training_example
+Your instant loan is approved. Pay the processing fee first and send your Aadhaar and bank login details.,scam,Loan App / Advance Fee Scam,SMS,synthetic_training_example
+You have won a large international lottery. Pay the release tax and provide your bank details to claim the prize.,scam,Lottery / Prize Scam,Email,synthetic_training_example
+I urgently need money for an emergency flight. Please send funds today and do not tell anyone until I arrive.,scam,Romance / Relationship Scam,Social media,synthetic_training_example
+Donate immediately to this personal wallet for disaster victims. We cannot provide receipts but every minute counts.,scam,Charity / Disaster Donation Scam,Social media,synthetic_training_example
+Your computer is infected. Install this remote access app and pay our technician to remove the virus.,scam,Tech Support Scam,Phone,synthetic_training_example
+A refund is waiting in your account. Scan our QR code and approve the payment request to receive it.,scam,Fake Refund Scam,Phone,synthetic_training_example
+I am the company director. We changed our bank account. Send today's supplier payment to the new account and keep this confidential.,scam,Business Email Compromise,Email,synthetic_training_example
+Your SIM will stop working unless you confirm your details at this link. Enter your identity and account information.,scam,SIM Swap / Mobile Account Takeover,SMS,synthetic_training_example
+Your page violates copyright. Log in through this appeal link within one hour or your account will be permanently disabled.,scam,Social Media Account Theft,Social media,synthetic_training_example
+We recorded you through your webcam. Pay cryptocurrency within 24 hours or we will send the recording to your contacts.,scam,Sextortion / Blackmail,Email,synthetic_training_example
+Designer phone at 90 percent discount. Pay by direct bank transfer only. No cash on delivery and no refunds.,scam,Fake Shopping Website,Website,synthetic_training_example
+The flat is yours without a visit. Send a refundable booking deposit now because many people are waiting.,scam,Rental / Property Deposit Scam,Marketplace,synthetic_training_example
+Concert tickets are available below official price. Transfer the full amount to my personal UPI ID and I will send the QR ticket.,scam,Ticket / Event Booking Scam,Social media,synthetic_training_example
+You qualify for a government grant. Pay a file opening fee and provide your bank credentials to receive the benefit.,scam,Fake Government Grant,Email,synthetic_training_example
+Your insurance policy will lapse today. Pay the renewal amount to this personal account to avoid losing coverage.,scam,Insurance / Policy Renewal Scam,Phone,synthetic_training_example
+Your electricity connection will be disconnected tonight. Pay the overdue bill through this unofficial link immediately.,scam,Electricity Disconnection Scam,SMS,synthetic_training_example
+Your interview is confirmed. Purchase our mandatory training certificate from this payment link before attending.,scam,Job Interview / Training Certificate Scam,Email,synthetic_training_example
+"For an instant refund, call this support number and install the screen-sharing app requested by our agent.",scam,Fake Customer Care Number,Website,synthetic_training_example
+I want to marry you but my parcel is held at the airport. Pay the customs charge so it can be delivered.,scam,Matrimonial / Marriage Scam,Social media,synthetic_training_example
+Your loan is overdue. Pay immediately to this personal wallet or we will contact your family and employer.,scam,Fake Loan Recovery / Threat Scam,SMS,synthetic_training_example
+Your account has an urgent invoice. Buy gift cards and email us the codes to avoid service termination.,scam,Gift Card Payment Scam,Email,synthetic_training_example
+Install this parcel tracking APK from the attachment to see your delivery status.,scam,Malware / APK Installation Scam,SMS,synthetic_training_example
+"Upload your Aadhaar, PAN, selfie and bank statement to verify your prize eligibility.",scam,Identity Theft / Document Harvesting,Website,synthetic_training_example
+Your scholarship is approved. Pay a document verification charge to this personal number before the deadline.,scam,Fake School / Scholarship Fee Scam,WhatsApp,synthetic_training_example
+I am your manager. I am in a confidential meeting. Transfer the vendor payment now and do not call me.,scam,Deepfake Executive / Voice Impersonation,Phone,synthetic_training_example
+Pay for premium verification to unlock guaranteed government job placement and interview calls.,scam,Fake Job Portal Subscription,Website,synthetic_training_example
+I accidentally sent money to you. Return it immediately to this different UPI ID; the bank app is delayed.,scam,Wrong Transfer / Mistaken Payment Scam,Phone,synthetic_training_example
+Thank you for applying for the Software Developer role. Your application has been received. We will contact shortlisted candidates through our official careers portal.,safe,Genuine Job Application Acknowledgement,Email,synthetic_training_example
+Your interview is scheduled for Tuesday at 11 AM. Please join using the meeting link in your candidate portal. No payment is required.,safe,Normal Interview Invitation,Email,synthetic_training_example
+Your monthly account statement is available in your bank's official mobile application. We will never ask you to share your PIN or OTP.,safe,Legitimate Bank Statement Notice,Email,synthetic_training_example
+We received your payment of 850 rupees for order 12345. Your receipt is available in the official app.,safe,Normal Payment Receipt,Email,synthetic_training_example
+Your parcel is out for delivery today. Track its status in the courier company's official app. No additional payment is required.,safe,Genuine Parcel Tracking Update,SMS,synthetic_training_example
+"A password reset was requested for your account. If this was you, continue through the official website. If not, ignore this message and secure your account.",safe,Normal Password Reset Confirmation,Email,synthetic_training_example
+The semester examination timetable has been published on the university's official website. Please check the student portal for details.,safe,Legitimate University Notice,Email,synthetic_training_example
+Your electricity bill is due on the 15th. You can view and pay it using the official electricity board website or app.,safe,Normal Utility Bill Reminder,SMS,synthetic_training_example
+"Your order has been confirmed. You can view order details, delivery estimates and return options in your account on our official website.",safe,Genuine Shopping Order Confirmation,Email,synthetic_training_example
+The project review meeting is scheduled for Friday at 3 PM. Please find the agenda attached to this calendar invitation.,safe,Normal Meeting Invitation,Email,synthetic_training_example
+Scholarship applications are open on the official university portal. Read the eligibility criteria and submit your application before the published deadline.,safe,Legitimate Scholarship Information,Email,synthetic_training_example
+"A transaction was made using your card ending 1234. If you do not recognise it, contact your bank using the number on its official website.",safe,Normal Bank Transaction Alert,SMS,synthetic_training_example
+Your policy is due for renewal next month. Review the policy details in your official customer account or contact your known insurance advisor.,safe,Genuine Insurance Renewal Reminder,Email,synthetic_training_example
+We received your support request. Your ticket number is 45821. Our team will respond through the support centre in your account.,safe,Normal Customer Support Reply,Email,synthetic_training_example
+Here is the meeting link for the team discussion you scheduled. Please verify the organiser name before joining.,safe,Legitimate Video Meeting Link,Email,synthetic_training_example
+Your delivery is delayed due to weather conditions. The updated estimated delivery date is visible in the official tracking application.,safe,Normal Delivery Delay Notice,SMS,synthetic_training_example
+The tax filing deadline is approaching. Visit the official government tax portal directly to review your filing status.,safe,Genuine Tax Filing Reminder,Email,synthetic_training_example
+Your subscription renews on the date shown in your account settings. Manage or cancel it from the official application.,safe,Normal Subscription Renewal Notice,Email,synthetic_training_example
+Your monthly payslip is available in the company employee portal. Sign in using your usual company access method.,safe,Legitimate Employee Payslip Notice,Email,synthetic_training_example
+Reminder: your appointment is scheduled for 10 AM tomorrow. Call the clinic's published phone number if you need to reschedule.,safe,Normal Clinic Appointment Reminder,SMS,synthetic_training_example
+Your train booking is confirmed. Check your ticket and passenger details in the official booking account.,safe,Genuine Travel Booking Confirmation,Email,synthetic_training_example
+"A new login to your account was detected. If this was you, no action is needed. If not, open the official app and change your password.",safe,Normal Account Login Alert,Email,synthetic_training_example
+Your return has been accepted. The refund status is available in your order history. The bank may take several business days to process it.,safe,Legitimate Refund Status,Email,synthetic_training_example
+Your application status has changed. Sign in by typing the official government portal address in your browser to view details.,safe,Normal Government Service Update,SMS,synthetic_training_example
+Please review the attached role description and compensation details. You may contact the HR department using the contact information on the company's official website.,safe,Genuine Job Offer Follow-up,Email,synthetic_training_example
+The next term fee is due on the date listed in the student portal. Please use the school's regular payment channel.,safe,Normal School Fee Reminder,SMS,synthetic_training_example
+A security update is available. Open the software's built-in updater or visit the vendor's official website to install it.,safe,Legitimate Software Security Notice,Email,synthetic_training_example
+Thank you for your donation. Your receipt and donation reference are available in your account on our charity's official website.,safe,Normal Donation Receipt,Email,synthetic_training_example
+Your registration is complete. Your event pass is available in your attendee account. Please review the venue and entry instructions.,safe,Genuine Event Registration Confirmation,Email,synthetic_training_example
+Your mobile recharge was successful. The plan details and validity are available in your telecom provider's official app.,safe,Normal Mobile Recharge Confirmation,SMS,synthetic_training_example
+Your loan application is under review. Check the status through the lender's official website or contact the branch using its published number.,safe,Legitimate Loan Application Status,Email,synthetic_training_example
+"If your KYC details need updating, visit your bank branch or open the official banking app. Never share your OTP or PIN with anyone.",safe,Normal Bank KYC Information,Email,synthetic_training_example
+I am interested in the item. Can you share its condition and arrange payment through the marketplace's protected checkout?,safe,Genuine Marketplace Buyer Message,Marketplace,synthetic_training_example
+I will reach home around 7 PM. Please let me know if you need anything from the store.,safe,Normal Family Message,SMS,synthetic_training_example
+Your employment documents are ready in the company's secure HR portal. Contact HR through the official company directory if you have questions.,safe,Legitimate Remote Work Onboarding,Email,synthetic_training_example
+"For international shipments, any applicable customs charges will be shown through the courier's official tracking portal. Verify independently before paying.",safe,Normal Courier Customs Information,Email,synthetic_training_example
+Heavy rain is expected in your area today. Follow updates from the official weather department and local authorities.,safe,Genuine Public Safety Advisory,SMS,synthetic_training_example
+Use a unique password and enable multi-factor authentication. We will never ask you to send your password by email.,safe,Normal Password Security Advice,Email,synthetic_training_example
+Your complaint has been registered. Use the reference number to track it through the bank's official grievance portal.,safe,Legitimate Bank Complaint Acknowledgement,Email,synthetic_training_example
+Three new job listings match your saved search. Review them on the job portal and verify each employer before applying.,safe,Normal Job Portal Notification,Email,synthetic_training_example
