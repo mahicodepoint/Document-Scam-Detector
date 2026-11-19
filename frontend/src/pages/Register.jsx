@@ -33,7 +33,21 @@ export default function Register({ onLogin }) {
         })
       });
 
-      const data = await response.json();
+    const responseText = await response.text();
+
+let data;
+
+try {
+  data = JSON.parse(responseText);
+} catch {
+  throw new Error(
+    "Server returned an invalid response. Check backend API."
+  );
+}
+
+if (!response.ok) {
+  throw new Error(data.error || "Registration failed.");
+}
       if (!response.ok) throw new Error(data.error || "Registration failed.");
 
       localStorage.setItem("token", data.token);
