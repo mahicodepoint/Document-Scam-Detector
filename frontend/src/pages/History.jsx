@@ -1,4 +1,5 @@
-﻿import { useEffect, useMemo, useState } from "react";
+﻿
+import { useEffect, useMemo, useState } from "react";
 
 const API = "http://localhost:5000/api/scan";
 
@@ -9,19 +10,30 @@ export default function History() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
-  const loadHistory = async () => {
+  // Load scan history
+  const loadHistory = async (showLoading = true) => {
     try {
-      setLoading(true);
+      if (showLoading) {
+        setLoading(true);
+      }
+
       setError("");
 
       const response = await fetch(`${API}/history`);
 
       if (!response.ok) {
-        throw new Error("Unable to load scan history.");
+        throw new Error(`Unable to load history (${response.status}).`);
       }
 
       const data = await response.json();
-      setRows(Array.isArray(data) ? data : data.scans || []);
+
+      const records = Array.isArray(data)
+        ? data
+        : Array.isArray(data.scans)
+        ? data.scans
+        : [];
+
+      setRows(records);
     } catch (err) {
       setError(err.message || "Something went wrong.");
     } finally {
@@ -29,41 +41,97 @@ export default function History() {
     }
   };
 
+  // Initial history loading
   useEffect(() => {
-    loadHistory();
+    let ignore = false;
+
+    const fetchHistory = async () => {
+      try {
+        const response = await fetch(`${API}/history`);
+
+        if (!response.ok) {
+          throw new Error(`Unable to load history (${response.status}).`);
+        }
+
+        const data = await response.json();
+
+        if (!ignore) {
+          const records = Array.isArray(data)
+            ? data
+            : Array.isArray(data.scans)
+            ? data.scans
+            : [];
+
+          setRows(records);
+        }
+      } catch (err) {
+        if (!ignore) {
+          setError(err.message || "Something went wrong.");
+        }
+      } finally {
+        if (!ignore) {
+          setLoading(false);
+        }
+      }
+    };
+
+    fetchHistory();
+
+    return () => {
+      ignore = true;
+    };
   }, []);
 
+  // Search and date filter
   const filteredRows = useMemo(() => {
     const now = new Date();
 
-    return rows.filter((item) => {
-      const type = item.scanType || "Text";
-      const preview = item.inputText || item.extractedText || "";
-      const risk = item.riskLevel || "Unknown";
-      const prediction = item.prediction || item.verdict || "";
-      const date = new Date(item.createdAt);
+    return [...rows]
+      .sort(
+        (a, b) =>
+          new Date(b.createdAt || 0) - new Date(a.createdAt || 0)
+      )
+      .filter((item) => {
+        const type = item.scanType || "Text";
+        const preview = item.inputText || item.extractedText || "";
+        const risk = item.riskLevel || "Unknown";
+        const prediction = item.prediction || item.verdict || "";
+        const date = new Date(item.createdAt);
 
-      const matchesSearch = [
-        type,
-        preview,
-        risk,
-        prediction
-      ].join(" ").toLowerCase().includes(search.toLowerCase());
+        const searchText = [
+          type,
+          preview,
+          risk,
+          prediction
+        ].join(" ").toLowerCase();
 
-      let matchesDate = true;
+        const matchesSearch = searchText.includes(
+          search.trim().toLowerCase()
+        );
 
-      if (filter === "Today") {
-        matchesDate = date.toDateString() === now.toDateString();
-      } else if (filter === "This Week") {
-        const weekAgo = new Date();
-        weekAgo.setDate(now.getDate() - 7);
-        matchesDate = date >= weekAgo && date <= now;
-      }
+        let matchesDate = true;
 
-      return matchesSearch && matchesDate;
-    });
+        if (filter === "Today") {
+          matchesDate =
+            !isNaN(date.getTime()) &&
+            date.toDateString() === now.toDateString();
+        }
+
+        if (filter === "This Week") {
+          const weekAgo = new Date();
+          weekAgo.setDate(now.getDate() - 7);
+
+          matchesDate =
+            !isNaN(date.getTime()) &&
+            date >= weekAgo &&
+            date <= now;
+        }
+
+        return matchesSearch && matchesDate;
+      });
   }, [rows, search, filter]);
 
+  // Risk badge styling
   const getRiskClass = (risk) => {
     const value = (risk || "").toLowerCase();
 
@@ -74,10 +142,17 @@ export default function History() {
     return "medium";
   };
 
+  // Format date
   const formatDate = (date) => {
     if (!date) return "N/A";
 
-    return new Date(date).toLocaleString("en-IN", {
+    const parsedDate = new Date(date);
+
+    if (isNaN(parsedDate.getTime())) {
+      return "N/A";
+    }
+
+    return parsedDate.toLocaleString("en-IN", {
       day: "2-digit",
       month: "short",
       year: "numeric",
@@ -91,11 +166,17 @@ export default function History() {
       <div className="page-title">
         <div>
           <h1>Analysis History</h1>
-          <p>Review your previous Document Scam Detector assessments.</p>
+          <p>
+            Review your previous Document Scam Detector assessments.
+          </p>
         </div>
 
-        <button className="scan-button" onClick={loadHistory}>
-          Refresh History
+        <button
+          className="scan-button"
+          onClick={() => loadHistory(true)}
+          disabled={loading}
+        >
+          {loading ? "Loading..." : "Refresh History"}
         </button>
       </div>
 
@@ -103,6 +184,7 @@ export default function History() {
         <div className="table-toolbar">
           <input
             className="search-input"
+            type="text"
             placeholder="Search your scans..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
@@ -112,18 +194,23 @@ export default function History() {
             value={filter}
             onChange={(e) => setFilter(e.target.value)}
           >
-            <option>All Time</option>
-            <option>Today</option>
-            <option>This Week</option>
+            <option value="All Time">All Time</option>
+            <option value="Today">Today</option>
+            <option value="This Week">This Week</option>
           </select>
         </div>
 
-        {loading && <p>Loading scan history...</p>}
+        {loading && (
+          <p>Loading scan history...</p>
+        )}
 
-        {error && (
+        {!loading && error && (
           <div className="error-message">
-            {error}
-            <button onClick={loadHistory}>Try Again</button>
+            <p>{error}</p>
+
+            <button onClick={() => loadHistory(true)}>
+              Try Again
+            </button>
           </div>
         )}
 
@@ -144,29 +231,44 @@ export default function History() {
                 {filteredRows.length > 0 ? (
                   filteredRows.map((item, index) => {
                     const type = item.scanType || "Text";
+
                     const preview =
-                      item.inputText || item.extractedText || "No preview available";
+                      item.inputText ||
+                      item.extractedText ||
+                      item.url ||
+                      "No preview available";
+
                     const risk = item.riskLevel || "Unknown";
+
                     const score =
                       item.confidence !== undefined &&
-                      item.confidence !== null
+                      item.confidence !== null &&
+                      !isNaN(Number(item.confidence))
                         ? `${Number(item.confidence).toFixed(2)}%`
                         : "N/A";
 
                     return (
                       <tr key={item._id || index}>
-                        <td><b>{type}</b></td>
+                        <td>
+                          <b>{type}</b>
+                        </td>
+
                         <td title={preview}>
                           {preview.length > 65
                             ? `${preview.substring(0, 65)}...`
                             : preview}
                         </td>
+
                         <td>
-                          <span className={`risk ${getRiskClass(risk)}`}>
+                          <span
+                            className={`risk ${getRiskClass(risk)}`}
+                          >
                             {risk}
                           </span>
                         </td>
+
                         <td>{score}</td>
+
                         <td>{formatDate(item.createdAt)}</td>
                       </tr>
                     );
